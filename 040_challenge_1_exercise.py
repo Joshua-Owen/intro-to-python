@@ -30,13 +30,46 @@ print("")
 print("Function: report_long_words")
 
 def report_long_words(words):
-  pass
+  print(f"original words: {words}")
+  filtered = remove_hyphens_and_short_words(words)
+  elipsis = add_elipses(filtered)
+  ans = print_list(elipsis)
+  
+  return ans
 
+def remove_hyphens_and_short_words(words):
+  for word in words[:]:
+    if '-' in word  or len(word) < 10:
+      words.remove(word)
+  print(f"word List no hyphens or under 10: {words}")
+  return words
+
+def add_elipses(words):
+  wor = []
+
+  for word in words:
+    if len(word) >= 15:
+      wor.append(word[0:15] + "...")
+    else:
+      wor.append(word)
+  #words = [word[0:15] + "..." if len(word) >= 15 else word for word in words]
+
+  print(f"word List elipses added: {words}")
+
+  return wor
+
+def print_list(words):
+  final_list = f"These words are quite long: {', '.join(words)}"
+  #print("word List:" .join())
+
+  return final_list
+    
 check_that_these_are_equal(
   report_long_words([
     'hello',
     'nonbiological',
     'Kay',
+    'K-O',
     'this-is-a-long-word',
     'antidisestablishmentarianism'
   ]),

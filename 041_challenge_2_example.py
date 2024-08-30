@@ -109,6 +109,8 @@ groups_to_check = [
   [(0, 2), (1, 1), (2, 0)]
 ]
 
+
+
 def is_game_over(board):
   # We go through our groups
   for group in groups_to_check:

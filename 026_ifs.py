@@ -54,7 +54,7 @@ print("Function: is_first_of_the_month")
 def is_first_of_the_month(day_number):
   # Return "First of the month!" if the day number is 1.
   # Return "Not first of the month" otherwise.
-  pass
+  return "First of the month!" if day_number == 1 else "Not first of the month" 
 
 check_that_these_are_equal(
   is_first_of_the_month(1),
@@ -75,7 +75,7 @@ def has_five_chars(the_str):
   # Return "STRING is five characters long" if the string
   # is five characters long.
   # Otherwise, return "Not five characters".
-  pass
+  return (f"{the_str} is five characters long") if len(the_str) == 5 else "Not five characters"
 
 check_that_these_are_equal(
   has_five_chars("ABCDE"),
